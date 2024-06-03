@@ -5,7 +5,7 @@
 //          PART ONE
 // ***************************
 // Write a JavaScript program to display the current day and time, start with:
-console.log(new Date)
+// console.log(new Date)
 
 const displayDate = () => {
   const currentDate = new Date()
@@ -15,17 +15,29 @@ const displayDate = () => {
  
 
 // Write a JavaScript program to convert a number to a string.
+const numberToString = () => {
+  const number1 = 123
+  const string1 = String(number1)
+  
+  return string1;
 
-const number = 123
-const string = String(number)
+}
+const updateDisplay1 = () => {
+  document.getElementById("display-element").innerHTML = numberToString();
+}
 
-console.log(string)
+//I'm unsure why in the code above why I couldn't have put the "numberToString" function in the onclick
 
 // Write a JavaScript program to convert a string to the number.
-const string = "123"
-const number = Number(string)
-
-console.log(number)
+const stringToNumber = () => {
+  const string2 = "456"
+  const number2 = Number(string2)
+  
+  return number2
+}
+const updateDisplay2 = () => {
+  document.getElementById("display-element").innerHTML = stringToNumber();
+}
 
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
@@ -38,22 +50,18 @@ console.log(number)
 // NOTE: Exlclude this function while completing Part II. The Data Type will always return as a String. If you want a challenge, come back to this function and start in the console. Then see what you can make of it. Again, simply skip this function while completing Part II of this project.
 function checkType(value) {
   if (typeof value === "boolean") {
-    console.log("boolean");
-  } else if (value === null) {
-    console.log("null")
-  } else if (typeof value === "undefined") {
-    console.log("Undefined");
-  } else if (typeof value === "number") {
-    if (isNaN(value)) {
-      console.log("NaN");
-    } else {
-      console.log("Number");
-    }
-  } else if (typeof value === "string") {
-    console.log("string");
-  } else {
-    console.log("Unknown Type");
-  }
+  console.log("Boolean");
+} else if (typeof value === null) {
+  console.log("Null");
+} else if (typeof value === "undefined") {
+  console.log("Undefined");
+} else if (typeof value === "number") {
+  console.log("Number");
+} else if (typeof value === "string") {
+  console.log("String");
+} else {
+  console.log("Unknown");
+}
 }
 
 checkType(true);
@@ -66,57 +74,72 @@ checkType([]);
 checkType({});
 checkType(() => {});
 
+const updateDisplay3 = () => {
+  document.getElementById("display-element").innerHTML = checkType();
+}
+
+// const variable1 = true
+// const variable2 = Null
+// const variable3 = undefined
+// const variable4 = 1
+// const variable5 = 0.0 / 0.0
+// const variable6 = "string"
+
+// console.log(typeof variable1)
+// console.log(typeof variable2)
+// console.log(typeof variable3)
+// console.log(typeof variable4)
+// console.log(typeof variable5)
+// console.log(typeof variable6)
+
+
   
 // Write a JavaScript program that adds 2 numbers together.
-const num1 = 1
-const num2 = 2
+const numbers = (num1,num2) => {
+  return num1 + num2
+}
 
-console.log(num1 + num2)
+numbers(1,2)s
 
 
 // Write a JavaScript program that runs only when 2 things are true.
-function runProgram(condition1, condition2) {
-  if (condition1 && condition2) {
-  console.log("Program is running successfully");
+const pass1 = "This function ran correctly"
+const realFirstName1 = "Cyrell"
+const inputFirstName1 = "Cyrell"
+const realLastName1 = "Estrada"
+const inputLastName1 = "Estrada"
+
+if (inputFirstName1 === realFirstName1 && inputLastName1 === realLastName1) {
+  console.log(pass1)
 } else {
-  console.log("Conditions were not met, program is not running");
+  console.log("This function ran incorrectly")
 }
-}
-
-let condition1 = true;
-let condition2 = true;
-
-runProgram(condition1, condition2)
 
 
 // Write a JavaScript program that runs when 1 of 2 things are true.
-function runProgram(condition1, condition2) {
-  if (condition1 || condition2) {
-  console.log("Program is running successfully");
+const pass2 = "This function ran correctly"
+const realFirstName = "Cyrell"
+const inputFirstName = "Cyrell"
+const realLastName = "Estrada"
+const inputLastName = "Estrada"
+
+if (inputFirstName === realFirstName || inputLastName === realLastName) {
+  console.log(pass2)
 } else {
-  console.log("Conditions were not met, program is not running");
+  console.log("This function ran incorrectly")
 }
-}
-
-let condition1 = true;
-let condition2 = false;
-
-runProgram(condition1, condition2)
 
 
 // Write a JavaScript program that runs when both things are not true.  
-function runProgram(condition1, condition2) {
-  if (!condition1 && !condition2) {
-  console.log("Program is running successfully");
+const pass = "This function ran correctly"
+
+if (8 != 5 && 6 != 7) {
+  console.log(pass)
 } else {
-  console.log("Conditions were not met, program is not running");
-}
+  console.log("This function ran incorrectly")
 }
 
-let condition1 = false;
-let condition2 = false;
 
-runProgram(condition1, condition2)
 // ***************************
 //         PART TWO
 // ***************************
